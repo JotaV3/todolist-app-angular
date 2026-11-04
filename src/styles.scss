@@ -42,6 +42,11 @@ header.menu-container {
     gap: 2rem;
 }
 
+.menu a {
+    color: #fff;
+    text-decoration: none;
+}
+
 .menu-user {
     grid-column: 3;
     display: flex;
