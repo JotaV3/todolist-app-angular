@@ -1,1 +1,55 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #f2f2f2;
+    color: #333;
+    font-size: 16px;
+}
+
+.template-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header.menu-container {
+    background-color: #6aafe8;
+    color: #fff;
+    font-size: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 70px;
+    padding: 1rem;
+}
+
+.menu-logo {
+    grid-column: 1;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.menu {
+    grid-column: 2;
+    display: flex;
+    gap: 2rem;
+}
+
+.menu-user {
+    grid-column: 3;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.material-symbols-outlined {
+    font-size: 32px;
+    vertical-align: middle;
+}
