@@ -1,14 +1,19 @@
 <div class="template-container">
-    <header>
+    <header class="menu-container">
         <div class="menu-logo">
-            <img src="assets/images/logo.png" alt="Logo" class="logo-image">
-            <span class="logo-text">Todo List</span>
+            <i class="material-symbols-outlined" aria-hidden="true">checklist</i>
+            <span class="logo-text">To-do List</span>
         </div>
 
         <nav class="menu">
             <a routerLink="/home" routerLinkActive="active">Home</a>
-            <a routerLink="/about" routerLinkActive="active">About</a>
-            <a routerLink="/contact" routerLinkActive="active">Contact</a>
+            <a routerLink="/task/create-task" routerLinkActive="active">Create Task</a>
         </nav>
+
+        <div class="menu-user">
+            <span>Hello,</span>
+            <span class="user-name">User Name</span>
+            <span class="material-symbols-outlined" aria-hidden="true">account_circle</span>
+        </div>
     </header>
 </div>
