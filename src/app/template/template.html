@@ -6,7 +6,7 @@
         </div>
 
         <nav class="menu">
-            <button class="btn-menu btn-create-task" type="button">
+            <button class="btn-menu btn-create-task" (click)="onClickCreateTask()" type="button">
                 Create Task
                 <i class="material-symbols-outlined">add_circle</i>
             </button>
@@ -21,5 +21,9 @@
 
     <main class="main-container">
         <router-outlet></router-outlet>
+
+        @if(isFormVisible){
+            <app-task-registration></app-task-registration>
+        }
     </main>
 </div>  
