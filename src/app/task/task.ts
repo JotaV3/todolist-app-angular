@@ -1,6 +1,6 @@
 import { FormControl } from "@angular/forms"
 
-export interface Task{
+export interface TaskFormControl{
     title: FormControl<string>;
     description: FormControl<string>;
     dueDate: FormControl<string>
