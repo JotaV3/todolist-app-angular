@@ -13,6 +13,18 @@ export class TaskRegistration implements OnInit{
   submittedForm: TaskData | null = null;
 
   ngOnInit(): void {
+    this.initializeFormGroup();
+  }
+
+  onSubmit(): void{
+    if(this.form.invalid) return;
+
+    this.submittedForm = this.form.getRawValue();
+
+    console.log(this.submittedForm);
+  }
+
+  private initializeFormGroup(){
     this.form = new FormGroup<TaskFormControl>({
       title: new FormControl('', {
         nonNullable: true, 
@@ -24,13 +36,5 @@ export class TaskRegistration implements OnInit{
         validators: [Validators.required]
       })
     })
-  }
-
-  onSubmit(): void{
-    if(this.form.invalid) return;
-
-    this.submittedForm = this.form.getRawValue();
-
-    console.log(this.submittedForm);
   }
 }
