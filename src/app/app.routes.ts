@@ -5,7 +5,7 @@ import { TaskRegistration } from './task/task-registration/task-registration';
 export const routes: Routes = [
     {
         component: Template,
-        path: 'home',
+        path: '',
         children: [
             {
                 component: TaskRegistration,
