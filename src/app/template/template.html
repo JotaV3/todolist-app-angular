@@ -23,7 +23,9 @@
         <router-outlet></router-outlet>
 
         @if(isFormVisible){
-            <app-task-registration></app-task-registration>
+            <app-task-registration 
+                (cancel)="onCancelTaskRegistration()">
+            </app-task-registration>
         }
     </main>
 </div>  

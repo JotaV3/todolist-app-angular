@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { TaskRegistration } from '../task/task-registration/task-registration';
 
@@ -8,10 +8,18 @@ import { TaskRegistration } from '../task/task-registration/task-registration';
   styleUrl: './template.scss',
   templateUrl: './template.html',
 })
-export class Template {
-  isFormVisible: boolean = false;
+export class Template implements OnInit{
+  isFormVisible!: boolean;
+
+  ngOnInit(): void {
+    this.isFormVisible = false;
+  }
 
   onClickCreateTask(){
-    this.isFormVisible = !this.isFormVisible;
+    this.isFormVisible = true;
+  }
+
+  onCancelTaskRegistration(){
+    this.isFormVisible = false;
   }
 }
