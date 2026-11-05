@@ -12,7 +12,7 @@ export class TaskRegistration implements OnInit{
   form!: FormGroup<TaskFormControl>;
   submittedForm: TaskData | null = null;
 
-  // vent
+  // event
   cancel = output<void>();
 
   ngOnInit(): void {
