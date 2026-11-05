@@ -5,3 +5,9 @@ export interface Task{
     description: FormControl<string>;
     dueDate: FormControl<string>
 }
+
+export interface TaskData{
+  title: string;
+  description: string;
+  dueDate: string;
+};
