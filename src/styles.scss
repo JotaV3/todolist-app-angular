@@ -43,19 +43,6 @@ header.menu-container {
     gap: 0;
 }
 
-.menu a {
-    color: #fff;
-    text-decoration: none;    
-    align-items: center;
-    display: flex;
-    padding: 0 1rem;
-}
-
-.menu a.active {
-    font-weight: bold;
-    background-color: #5b9fd6;
-}
-
 .menu-user {
     grid-column: 3;
     display: flex;
