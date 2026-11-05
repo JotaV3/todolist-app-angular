@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, output } from '@angular/core';
 import { ReactiveFormsModule, FormGroup, FormControl, Validators } from '@angular/forms';
 import { TaskFormControl, TaskData } from '../task';
 
@@ -12,8 +12,15 @@ export class TaskRegistration implements OnInit{
   form!: FormGroup<TaskFormControl>;
   submittedForm: TaskData | null = null;
 
+  // vent
+  cancel = output<void>();
+
   ngOnInit(): void {
     this.initializeFormGroup();
+  }
+
+  onClickCancelBtn(){
+    this.cancel.emit();
   }
 
   onSubmit(): void{
