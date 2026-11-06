@@ -24,7 +24,7 @@ export class TaskRegistration implements OnInit{
   }
 
   onSubmit(): void{
-    if(this.form.invalid) return;
+    if(this.isFormInvalid()) return;
 
     this.submittedForm = this.form.getRawValue();
 
@@ -43,5 +43,15 @@ export class TaskRegistration implements OnInit{
         validators: [Validators.required]
       })
     })
+  }
+
+  private isFormInvalid(): boolean{
+    if(this.form.invalid){
+      this.form.markAllAsTouched();
+
+      return true;
+    }
+
+    return false;
   }
 }

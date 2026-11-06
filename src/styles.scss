@@ -66,6 +66,12 @@ header.menu-container {
     margin-bottom: 1.2rem;
 }
 
+.form-error-hint{
+    color:rgb(218, 13, 13);
+    display: flex;
+    margin-top: 2%;
+}
+
 textarea{
     resize: none;
 }

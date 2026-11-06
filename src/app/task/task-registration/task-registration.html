@@ -9,11 +9,20 @@
                 <div class="form-group">
                     <label for="title">Title:</label>
                     <input formControlName="title" type="text" id="title" name="title" placeholder="Ex: My Task" required>
+
+                    @if(form.controls.title.touched && form.controls.title.hasError('required')){
+                        <span class="form-error-hint">Title is required.</span>
+                    }
                 </div>
                 
                 <div class="form-group">
                     <label for="dueDate">Due date:</label>
                     <input formControlName="dueDate" type="date" id="dueDate" name="dueDate" required>
+
+                    
+                    @if(form.controls.dueDate.touched && form.controls.dueDate.hasError('required')){
+                        <span class="form-error-hint">Due date is required.</span>
+                    }
                 </div>
 
                 <div class="form-group description-group">
