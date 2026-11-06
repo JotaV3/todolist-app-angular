@@ -16,6 +16,9 @@ body {
     height: 100vh;
 }
 
+// --------------------
+// ------ MENU --------
+// --------------------
 header.menu-container {
     background-color: #6aafe8;
     color: #fff;
@@ -55,6 +58,40 @@ header.menu-container {
     vertical-align: middle;
 }
 
+
+// ------------------
+// ------ FORM ------
+// ------------------
+.form-header{
+    margin-bottom: 1.2rem;
+}
+
+textarea{
+    resize: none;
+}
+
+input {
+    box-sizing: border-box;
+    height: 2.75rem;
+}
+
+input,
+textarea {
+    box-sizing: border-box;
+    width: 100%;  
+    padding: 0.6rem;
+    font-size: 16px;
+}
+
+label{
+    display: block;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+// --------------------
+// ------ BUTTON ------
+// --------------------
 button {
     cursor: pointer;
     align-self: center;

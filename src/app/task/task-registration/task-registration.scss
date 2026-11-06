@@ -7,6 +7,16 @@
     z-index: 1000;
 }
 
+// --------------------
+// ------ FORM --------
+// --------------------
+
+form{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
 .form-container {
     width: min(90%, 500px);
     max-height: 90vh;
@@ -14,4 +24,22 @@
     background-color: white;
     padding: 2rem;
     border-radius: 12px;
+}
+
+.form-group{
+    min-width: 0;
+}
+
+// --------------------
+// ------ BUTTON ------
+// --------------------
+.btn-form-group{
+    display: flex;
+    justify-content: right;
+    gap: 1rem;
+}
+
+.description-group,
+.btn-form-group {
+  grid-column: 1 / -1;
 }
