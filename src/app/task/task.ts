@@ -10,4 +10,4 @@ export interface TaskData{
   title: string;
   description: string;
   dueDate: string;
-};
+}
