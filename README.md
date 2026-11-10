@@ -1,8 +1,14 @@
 # To-do List App
 
-A clean, lightweight to-do list application built with Angular and TypeScript. The project provides a simple interface for navigating the app and registering tasks, with a responsive layout styled in SCSS.
+A task planning app built with Angular and TypeScript, designed to help organize daily commitments with a clean interface and intuitive workflow.
 
 > **Project status:** This application is under development. The task registration screen is currently a UI form; task creation and persistence are not yet implemented.
+
+## Screenshots
+
+### Task creation form
+
+![Task creation form](docs/images/task-registration.png)
 
 ## Features
 
@@ -16,7 +22,7 @@ A clean, lightweight to-do list application built with Angular and TypeScript. T
 - Angular 22
 - TypeScript
 - SCSS
-- RxJS 
+- RxJS
 
 ## Getting started
 
