@@ -11,3 +11,7 @@ export interface TaskData{
   description: string;
   dueDate: string;
 }
+
+export interface TaskRequest extends TaskData{
+  userId: number;
+}
