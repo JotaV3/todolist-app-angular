@@ -2,6 +2,8 @@ import { Component, inject, OnInit, output } from '@angular/core';
 import { ReactiveFormsModule, FormGroup, FormControl, Validators } from '@angular/forms';
 import { TaskFormControl, TaskData, TaskRequest } from '../task';
 import { TaskService } from '../../services/task-service';
+import { HttpErrorResponse } from '@angular/common/http';
+import { InvalidField } from '../../common/validations/invalid-field';
 
 @Component({
   imports: [ReactiveFormsModule],
@@ -34,8 +36,26 @@ export class TaskRegistration implements OnInit{
       next: (response) => {
         console.log('Card created succefully.', response);
       },
-      error: (error) => console.log('Unexpected error.', error)
+      error: (error) => this.handleApiResponseError(error)
     });
+  }
+  
+  private applyApiError(invalidFieldList: InvalidField[]): void{
+    invalidFieldList.forEach(invalidField => {
+      const control = this.form.get(invalidField.name);
+      if(control){
+        control.setErrors({apiError: invalidField.error});
+        control.markAsTouched();
+      }
+    });
+  }
+
+  private handleApiResponseError(responseError: HttpErrorResponse): void{
+    if(responseError.status === 422 && responseError.error?.invalidFieldList){
+      this.applyApiError(responseError.error?.invalidFieldList);
+    } else{
+      console.log("Unexpected error.");
+    }
   }
 
   // the userId is associated with a user already saved in the database.
