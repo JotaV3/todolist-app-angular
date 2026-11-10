@@ -14,4 +14,5 @@ export interface TaskData{
 
 export interface TaskRequest extends TaskData{
   userId: number;
+  taskStatusCode: number;
 }
