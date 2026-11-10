@@ -13,6 +13,12 @@
                     @if(form.controls.title.touched && form.controls.title.hasError('required')){
                         <span class="form-error-hint">Title is required.</span>
                     }
+
+                    @if(form.controls.title.hasError('apiError') && form.controls.title.touched){
+                        <span class="form-error-hint">
+                            {{ form.get('title')?.errors?.['apiError'] }}
+                        </span>
+                    }
                 </div>
                 
                 <div class="form-group">
