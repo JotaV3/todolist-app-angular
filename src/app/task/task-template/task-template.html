@@ -1,13 +1,13 @@
 <div class="task-container">
     <div class="task-content">
         <div class="header">
-            <h2 class="title">Task title</h2>
-            <span class="task-status">InProgress</span>
+            <h2 class="title">{{ task.title }}</h2>
+            <span class="task-status">{{ task.taskStatus }}</span>
         </div>
 
-        <span class="due-date">Due date:</span>
+        <span class="due-date">Due date: {{ task.dueDate }}</span>
 
-        <p class="description">{{description}}</p>
+        <p class="description">{{ task.description }}</p>
 
         <div class="action-buttons">
             <button class="btn-complete" type="button">Mark as completed</button>

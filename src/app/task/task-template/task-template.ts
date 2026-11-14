@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input} from '@angular/core';
+import { TaskResponse } from '../task';
+import { required } from '@angular/forms/signals';
 
 @Component({
   imports: [],
@@ -7,5 +9,5 @@ import { Component } from '@angular/core';
   templateUrl: './task-template.html',
 })
 export class TaskTemplate {
-  description: String = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper, nisl vitae bibendum egestas, ante libero mattis massa, eget convallis arcu dui vel lacus. Ut euismod enim arcu, eget vestibulum purus rutrum vitae.";
+  @Input({required: true}) task!: TaskResponse;
 }

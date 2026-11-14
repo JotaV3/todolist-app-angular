@@ -22,6 +22,10 @@
     <main class="main-container">
         <router-outlet></router-outlet>
 
+        @for(task of tasks(); track task.id){
+            <app-task-template [task]="task"></app-task-template>
+        }
+
         @if(isFormVisible){
             <app-task-registration 
                 (cancel)="onCancelTaskRegistration()">
