@@ -1,6 +1,6 @@
 import { Component, inject, OnInit, output } from '@angular/core';
 import { ReactiveFormsModule, FormGroup, FormControl, Validators } from '@angular/forms';
-import { TaskFormControl, TaskData, TaskRequest } from '../task';
+import { TaskFormControl, TaskRequest, TaskResponse } from '../task';
 import { TaskService } from '../../services/task-service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { InvalidField } from '../../common/validations/invalid-field';
@@ -19,6 +19,7 @@ export class TaskRegistration implements OnInit{
 
   // event
   cancel = output<void>();
+  created = output<TaskResponse>();
 
   ngOnInit(): void {
     this.initializeFormGroup();
@@ -35,6 +36,8 @@ export class TaskRegistration implements OnInit{
     this.service.create(payload).subscribe({
       next: (response) => {
         console.log('Card created succefully.', response);
+
+        this.created.emit(response);
       },
       error: (error) => this.handleApiResponseError(error)
     });

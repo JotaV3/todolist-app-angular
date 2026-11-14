@@ -38,4 +38,9 @@ export class Template implements OnInit{
   onCancelTaskRegistration(){
     this.isFormVisible = false;
   }
+
+  onTaskCreated(task: TaskResponse){
+    this.tasks.update(tasks => [...tasks, task]);
+    this.isFormVisible = false;
+  }
 }
