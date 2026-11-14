@@ -1,7 +1,10 @@
 .task-container {
-    margin: 12px;
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    margin: 0;
     background-color: #fff;
-    max-width: 400px;
+    min-width: 400px;
     height: 300px;
     border: 1px solid #e5e7eb;
     border-radius: 14px;

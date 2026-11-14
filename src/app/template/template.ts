@@ -1,12 +1,11 @@
 import { Component, OnInit, inject, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { TaskRegistration } from '../task/task-registration/task-registration';
 import { TaskTemplate } from '../task/task-template/task-template';
 import { TaskResponse } from '../task/task';
 import { TaskService } from '../services/task-service';
 
 @Component({
-  imports: [RouterOutlet, TaskRegistration, TaskTemplate],
+  imports: [TaskRegistration, TaskTemplate],
   selector: 'app-template',
   styleUrl: './template.scss',
   templateUrl: './template.html',
