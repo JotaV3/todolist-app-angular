@@ -6,13 +6,18 @@ import { TaskRequest, TaskResponse } from '../task/task';
 @Injectable({ providedIn: 'root' })
 export class TaskService {
     private readonly http = inject(HttpClient);
-    private readonly apiUrl = 'http://localhost:8080/tasks'
+    private readonly baseUrl = 'http://localhost:8080/api/tasks';
+    private readonly tasksByUserIdUrl = `${this.baseUrl}/user`;
 
     create(task: TaskRequest): Observable<TaskResponse> {
-        return this.http.post<TaskResponse>(this.apiUrl, task);
+        return this.http.post<TaskResponse>(this.baseUrl, task);
+    }
+
+    getAllByUserId(userId: number): Observable<TaskResponse[]>{
+        return this.http.get<TaskResponse[]>(`${this.tasksByUserIdUrl}/${userId}`);
     }
 
     getAll(): Observable<TaskResponse[]> {
-        return this.http.get<TaskResponse[]>(this.apiUrl);
+        return this.http.get<TaskResponse[]>(this.baseUrl);
     }
 }

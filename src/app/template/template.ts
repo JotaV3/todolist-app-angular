@@ -22,9 +22,9 @@ export class Template implements OnInit{
     // userId example
     const userId = 1;
 
-    this.taskService.getAll().subscribe({
+    this.taskService.getAllByUserId(userId).subscribe({
       next: allTasks =>{
-        this.tasks.set(allTasks.filter(task => task.user.id === userId))
+        this.tasks.set(allTasks)
       },
 
       error: error => console.log("Get all tasks error")
