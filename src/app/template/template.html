@@ -20,8 +20,11 @@
     </header>
 
     <main class="main-container">
-        @for(task of tasks(); track task.id){
-            <app-task-template [task]="task"></app-task-template>
+        @for(task of taskList(); track task.id){
+            <app-task-template 
+                [task]="task"
+                (deleted)="onTaskDeleted($event)">
+            </app-task-template>
         }
 
         @if(isFormVisible){

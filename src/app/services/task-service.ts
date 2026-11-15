@@ -9,6 +9,10 @@ export class TaskService {
     private readonly baseUrl = 'http://localhost:8080/api/tasks';
     private readonly tasksByUserIdUrl = `${this.baseUrl}/user`;
 
+    delete(id: number): Observable<void>{
+        return this.http.delete<void>(`${this.baseUrl}/${id}`);
+    }
+
     create(task: TaskRequest): Observable<TaskResponse> {
         return this.http.post<TaskResponse>(this.baseUrl, task);
     }

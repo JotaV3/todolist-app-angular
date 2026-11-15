@@ -11,7 +11,12 @@
 
         <div class="action-buttons">
             <button class="btn-complete" type="button">Mark as completed</button>
-            <button class="btn-delete" type="button">Delete</button>
+
+            <button 
+                class="btn-delete" 
+                type="button"
+                (click)="onTaskDeleted()">Delete
+            </button>
         </div>
     </div>
 </div>
