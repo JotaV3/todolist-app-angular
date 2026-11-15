@@ -163,3 +163,13 @@ button:hover {
     background-color: #fecaca;
     color: #991b1b;
 }
+
+//////////////////////
+/// RESPONSIVENESS ///
+//////////////////////
+
+@media (max-width: 600px) {
+    .btn-span{
+        display: none;
+    }
+}
