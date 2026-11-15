@@ -1,5 +1,6 @@
 :root{
     --btn-green: #16a34a;
+    --btn-red: #b91c1c;
 }
 
 * {
@@ -146,7 +147,7 @@ button:hover {
 .btn-cancel,
 .btn-delete{
     background-color: #fee2e2;
-    color: #b91c1c;
+    color: var(--btn-red);
 }
 
 .btn-cancel:hover,
