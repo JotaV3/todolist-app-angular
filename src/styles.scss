@@ -30,16 +30,22 @@ span{
 // ------ MENU --------
 // --------------------
 header.menu-container {
-    background-color: #6aafe8;
-    color: #fff;
+    background-color: #fff;
+    color: #1f2937;
     font-size: 1.5rem;
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
     width: 100%;
-    box-sizing: border-box;
     min-height: 70px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 8px rgb(15 23 42 / 6%);
     padding: 0 1rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+header.menu-container span {
+  color: inherit;
 }
 
 .menu-logo {
