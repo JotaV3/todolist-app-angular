@@ -109,6 +109,7 @@ label{
 // --------------------
 // ------ BUTTON ------
 // --------------------
+
 button {
     cursor: pointer;
     align-self: center;
@@ -116,7 +117,8 @@ button {
     border: none;
     color: #fff;
     font-weight: bold;
-    padding: 0.9rem;
+    font-size: 1rem;
+    padding: 8px 12px;
     border-radius: 0.7rem;
     transition: background-color 0.2s ease, transform 0.2s ease;
 }
