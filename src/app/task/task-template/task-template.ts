@@ -1,6 +1,5 @@
 import { Component, Input, output, OnInit } from '@angular/core';
 import { TaskResponse } from '../task';
-import { required } from '@angular/forms/signals';
 
 @Component({
   imports: [],
@@ -9,6 +8,8 @@ import { required } from '@angular/forms/signals';
   templateUrl: './task-template.html',
 })
 export class TaskTemplate implements OnInit{
+  private deletionTimer: ReturnType<typeof setTimeout> | undefined;
+
   @Input({required: true}) task!: TaskResponse;
 
   isConfirmationVisible!: boolean;
@@ -26,9 +27,18 @@ export class TaskTemplate implements OnInit{
 
   onDeletionCancelled(){
     this.isConfirmationVisible = false;
+
+    if(this.deletionTimer !== undefined){
+      clearTimeout(this.deletionTimer);
+      this.deletionTimer = undefined;
+    }
   }
 
   onClickDeleteTask(): void{
     this.isConfirmationVisible = true;
+
+    this.deletionTimer = setTimeout(() => {
+      this.onDeletionConfirmed();
+    }, 3000);
   }
 }

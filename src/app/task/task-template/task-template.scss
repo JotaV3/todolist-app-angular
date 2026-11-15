@@ -20,6 +20,29 @@
   background: #fff;
 }
 
+.countdown-track {
+  width: 100%;
+  height: 6px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #e5e7eb;
+}
+
+.countdown-fill {
+  width: 100%;
+  height: 100%;
+  background: #dc2626;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: countdown 3s linear forwards;
+}
+
+@keyframes countdown {
+  to {
+    transform: scaleX(1);
+  }
+}
+
 // FORM CONTENT
 
 .task-container {
