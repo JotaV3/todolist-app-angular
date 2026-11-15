@@ -9,14 +9,27 @@
 
         <p class="description">{{ task.description }}</p>
 
-        <div class="action-buttons">
+        <div class="btn-group">
             <button class="btn-complete" type="button">Mark as completed</button>
 
             <button 
                 class="btn-delete" 
                 type="button"
-                (click)="onTaskDeleted()">Delete
+                (click)="onClickDeleteTask()">Delete
             </button>
         </div>
     </div>
+
+    @if (isConfirmationVisible) {
+        <div class="delete-confirmation-overlay">
+            <div class="confirmation-box">
+                <p>Are you sure you want to delete this task?</p>                
+
+                <div class="btn-group">
+                    <button class="btn-confirm" type="button" (click)="onDeletionConfirmed()">Confirm</button>
+                    <button class="btn-cancel" type="button" (click)="onDeletionCancelled()">Cancel</button>
+                </div>                
+            </div>
+        </div>
+    }
 </div>

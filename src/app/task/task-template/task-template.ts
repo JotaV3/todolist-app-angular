@@ -1,4 +1,4 @@
-import { Component, Input, output} from '@angular/core';
+import { Component, Input, output, OnInit } from '@angular/core';
 import { TaskResponse } from '../task';
 import { required } from '@angular/forms/signals';
 
@@ -8,13 +8,27 @@ import { required } from '@angular/forms/signals';
   styleUrl: './task-template.scss',
   templateUrl: './task-template.html',
 })
-export class TaskTemplate {
+export class TaskTemplate implements OnInit{
   @Input({required: true}) task!: TaskResponse;
+
+  isConfirmationVisible!: boolean;
 
   // event
   deleted = output<number>();
 
-  onTaskDeleted(): void{
+  ngOnInit(): void {
+    this.isConfirmationVisible = false;
+  }
+
+  onDeletionConfirmed(){
     this.deleted.emit(this.task.id);
+  }
+
+  onDeletionCancelled(){
+    this.isConfirmationVisible = false;
+  }
+
+  onClickDeleteTask(): void{
+    this.isConfirmationVisible = true;
   }
 }

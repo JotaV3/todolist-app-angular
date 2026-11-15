@@ -125,25 +125,25 @@ button:hover {
     font-size: 1.5rem;
 }
 
+.btn-confirm,
 .btn-complete,
-.btn-create-task,
-.btn-form-create-task{
+.btn-create{
     background-color: var(--btn-green);
 }
 
+.btn-confirm:hover,
 .btn-complete:hover, 
-.btn-create-task:hover,
-.btn-form-create-task:hover{
+.btn-create:hover{
     background-color: #15803d;
 }
 
-.btn-form-cancel,
+.btn-cancel,
 .btn-delete{
     background-color: #fee2e2;
     color: #b91c1c;
 }
 
-.btn-form-cancel:hover,
+.btn-cancel:hover,
 .btn-delete:hover {
     background-color: #fecaca;
     color: #991b1b;
