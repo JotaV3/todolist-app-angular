@@ -1,3 +1,7 @@
+:root{
+    --btn-green: #16a34a;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -107,6 +111,11 @@ button {
     font-weight: bold;
     padding: 0.9rem;
     border-radius: 0.7rem;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-1px);
 }
 
 .btn-menu{
@@ -116,14 +125,26 @@ button {
     font-size: 1.5rem;
 }
 
-.btn-form{
-    font-size: 1.2rem;
+.btn-complete,
+.btn-create-task,
+.btn-form-create-task{
+    background-color: var(--btn-green);
 }
 
-.btn-create-task{
-    background-color: rgb(134, 199, 38);
+.btn-complete:hover, 
+.btn-create-task:hover,
+.btn-form-create-task:hover{
+    background-color: #15803d;
 }
 
-.btn-cancel{
-    background-color: rgb(222, 82, 82);
+.btn-form-cancel,
+.btn-delete{
+    background-color: #fee2e2;
+    color: #b91c1c;
+}
+
+.btn-form-cancel:hover,
+.btn-delete:hover {
+    background-color: #fecaca;
+    color: #991b1b;
 }
