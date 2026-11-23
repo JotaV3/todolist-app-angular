@@ -17,11 +17,8 @@ export class TaskService {
         return this.http.post<TaskResponse>(this.baseUrl, task);
     }
 
+    // gets all of the user's tasks
     getAllByUserId(userId: number): Observable<TaskResponse[]>{
         return this.http.get<TaskResponse[]>(`${this.tasksByUserIdUrl}/${userId}`);
-    }
-
-    getAll(): Observable<TaskResponse[]> {
-        return this.http.get<TaskResponse[]>(this.baseUrl);
     }
 }
