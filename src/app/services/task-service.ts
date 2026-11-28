@@ -6,8 +6,8 @@ import { TaskRequest, TaskResponse } from '../task/task';
 @Injectable({ providedIn: 'root' })
 export class TaskService {
     private readonly http = inject(HttpClient);
-    private readonly baseUrl = 'http://localhost:8080/api/tasks';
-    private readonly tasksByUserIdUrl = `${this.baseUrl}/user`;
+    private readonly baseUrl = 'https://todolist-api-java-y415.onrender.com/tasks';
+    private readonly tasksByUserIdUrl = `${this.baseUrl}/me`;
 
     delete(id: number): Observable<void>{
         return this.http.delete<void>(`${this.baseUrl}/${id}`);
@@ -18,7 +18,7 @@ export class TaskService {
     }
 
     // gets all of the user's tasks
-    getAllByUserId(userId: number): Observable<TaskResponse[]>{
-        return this.http.get<TaskResponse[]>(`${this.tasksByUserIdUrl}/${userId}`);
+    getAllByUserId(): Observable<TaskResponse[]>{
+        return this.http.get<TaskResponse[]>(`${this.tasksByUserIdUrl}`);
     }
 }

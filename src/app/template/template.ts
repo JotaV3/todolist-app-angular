@@ -20,10 +20,7 @@ export class Template implements OnInit{
   ngOnInit(): void {
     this.isFormVisible = false;
 
-    // userId example
-    const userId = 1;
-
-    this.taskService.getAllByUserId(userId).subscribe({
+    this.taskService.getAllByUserId().subscribe({
       next: allTasks =>{
         this.taskList.set(allTasks)
       },
